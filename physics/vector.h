@@ -13,42 +13,42 @@ typedef struct vector
 }Vector;
 
 /// <summary>
-/// ´´½¨ÏòÁ¿
+/// åˆ›å»ºå‘é‡
 /// </summary>
 Vector GetVector(double x, double y);
 /// <summary>
-/// ÁãÏòÁ¿
+/// é›¶å‘é‡
 /// </summary>
 Vector GetZero();
 
 /// <summary>
-/// ÏòÁ¿¼Ó·¨
+/// å‘é‡åŠ æ³•
 /// </summary>
 Vector Add(Vector a, Vector b);
 /// <summary>
-/// ÏòÁ¿¼õ·¨
+/// å‘é‡å‡æ³•
 /// </summary>
 Vector Substract(Vector a, Vector b);
 /// <summary>
-/// È¡·´
+/// å–å
 /// </summary>
 Vector Negate(Vector v);
 
 /// <summary>
-/// Êı³Ë
+/// æ•°ä¹˜
 /// </summary>
 Vector ScalarProduct(Vector v, double c);
 /// <summary>
-/// µã³Ë
+/// ç‚¹ä¹˜
 /// </summary>
 double DotProduct(Vector a, Vector b);
 /// <summary>
-/// ²æ³Ë
+/// å‰ä¹˜
 /// </summary>
 double CrossProduct(Vector a, Vector b);
 
 /// <summary>
-/// ÅĞ¶ÏÁ½ÏòÁ¿ÊÇ·ñÏàµÈ
+/// åˆ¤æ–­ä¸¤å‘é‡æ˜¯å¦ç›¸ç­‰
 /// </summary>
 bool IsVectorsEqual(Vector a, Vector b);
 
@@ -57,32 +57,32 @@ bool IsNearlyEqual(double a, double b);
 bool IsVectorsNearlyEqual(Vector a, Vector b);
 
 /// <summary>
-/// È¡µ¥Î»ÏòÁ¿
+/// å–å•ä½å‘é‡
 /// </summary>
 Vector Normalize(Vector v);
 /// <summary>
-/// È¡Ä£
+/// å–æ¨¡
 /// </summary>
 double GetVectorLength(Vector v);
 
 double GetLengthSquared(Vector v);
 /// <summary>
-/// Á½µã¾àÀë
+/// ä¸¤ç‚¹è·ç¦»
 /// </summary>
 double Distance(Vector a, Vector b);
 
 double GetDistanceSquared(Vector a, Vector b);
 /// <summary>
-/// ×ø±ê±ä»»
+/// åæ ‡å˜æ¢
 /// </summary>
 Vector DoTransform(Vector v, Transform transform);
 
 /// <summary>
-/// Í¨¹ıÏòÁ¿ÒÆ¶¯»­±Ê
+/// é€šè¿‡å‘é‡ç§»åŠ¨ç”»ç¬”
 /// </summary>
 void MovePenByVector(Vector position);
 /// <summary>
-/// Í¨¹ıÏòÁ¿»­Ïß
+/// é€šè¿‡å‘é‡ç”»çº¿
 /// </summary>
 void DrawLineByVector(Vector direction);
 

@@ -16,43 +16,43 @@ Vector GetZero()
 	return GetVector(0.0, 0.0);
 }
 
-//ÏòÁ¿¼Ó·¨
+//å‘é‡åŠ æ³•
 Vector Add(Vector a, Vector b)
 {
 	return GetVector(a.x + b.x, a.y + b.y);
 }
 
-//ÏòÁ¿¼õ·¨ 
+//å‘é‡å‡æ³• 
 Vector Substract(Vector a, Vector b)
 {
 	return GetVector(a.x - b.x, a.y - b.y);
 }
 
-//È¡·´ 
+//å–å 
 Vector Negate(Vector v)
 {
 	return GetVector(-v.x, -v.y);
 }
 
-//ÏòÁ¿Êı³Ë 
+//å‘é‡æ•°ä¹˜ 
 Vector ScalarProduct(Vector v, double c)
 {
 	return GetVector(v.x * c, v.y * c);
 }
 
-//ÏòÁ¿µã³Ë 
+//å‘é‡ç‚¹ä¹˜ 
 double DotProduct(Vector a, Vector b)
 {
 	return a.x * b.x + a.y * b.y;
 }
 
-//ÏòÁ¿²æ³Ë 
+//å‘é‡å‰ä¹˜ 
 double CrossProduct(Vector a, Vector b)
 {
 	return a.x * b.y - a.y * b.x;
 }
 
-//Á½ÏòÁ¿ÊÇ·ñÏàµÈ 
+//ä¸¤å‘é‡æ˜¯å¦ç›¸ç­‰ 
 bool IsVectorsEqual(Vector a, Vector b)
 {
 	if(a.x == b.x && a.y == b.y)
@@ -70,14 +70,14 @@ bool IsVectorsNearlyEqual(Vector a, Vector b)
 	return GetDistanceSquared(a, b) < Epsilon * Epsilon;
 }
 
-//»ñÈ¡µ¥Î»ÏòÁ¿ 
+//è·å–å•ä½å‘é‡ 
 Vector Normalize(Vector v)
 {
 	double len = GetVectorLength(v);
 	return GetVector(v.x / len, v.y / len);
 }
 
-//»ñÈ¡ÏòÁ¿³¤¶È 
+//è·å–å‘é‡é•¿åº¦ 
 double GetVectorLength(Vector v)
 {
 	return sqrt(v.x * v.x + v.y * v.y); 
@@ -88,7 +88,7 @@ double GetLengthSquared(Vector v)
 	return v.x * v.x + v.y * v.y;
 }
 
-//Á½µã¾àÀë 
+//ä¸¤ç‚¹è·ç¦» 
 double Distance(Vector a, Vector b)
 {
 	return GetVectorLength(Substract(a, b));
@@ -98,12 +98,12 @@ double GetDistanceSquared(Vector a, Vector b)
 {
 	return GetLengthSquared(Substract(a, b));
 }
-//×ø±ê±ä»» 
+//åæ ‡å˜æ¢ 
 Vector DoTransform(Vector v, Transform transform)
 {
 	//do rotation first, then do translation
-	//x2 = cos¦Èx1 - sin¦Èy1; 
-	//y2 = sin¦Èx1 + cos¦Èy1;
+	//x2 = cosÎ¸x1 - sinÎ¸y1; 
+	//y2 = sinÎ¸x1 + cosÎ¸y1;
 	Vector result;
 	result.x = transform.cos * v.x - transform.sin * v.y + transform.positionX;
 	result.y = transform.sin * v.x + transform.cos * v.y + transform.positionY;

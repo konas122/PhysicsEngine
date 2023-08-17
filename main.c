@@ -37,22 +37,22 @@
 typedef enum mode
 {
 	/// <summary>
-	/// »æÖÆÊµÌåÄ£Ê½
+	/// ç»˜åˆ¶å®ä½“æ¨¡å¼
 	/// </summary>
 	DrawMode,
 	/// <summary>
-	/// ÒÆ¶¯ÊµÌåÄ£Ê½
+	/// ç§»åŠ¨å®ä½“æ¨¡å¼
 	/// </summary>
 	ControlMode,
 	/// <summary>
-	/// Ëæ»úÉú³ÉÄ£Ê½£¨Êó±êµã»÷£©
+	/// éšæœºç”Ÿæˆæ¨¡å¼ï¼ˆé¼ æ ‡ç‚¹å‡»ï¼‰
 	/// </summary>
 	RandomMode
 }Mode;
 
 void GenerateColors();
 /// <summary>
-/// ×Ü¸üĞÂ
+/// æ€»æ›´æ–°
 /// </summary>
 /// <param name="TimeID"></param>
 void Update(int TimeID);
@@ -85,28 +85,28 @@ static Mode mode = DrawMode;
 static List* verticesList;
 static bool drawStart = FALSE;
 static ShapeType targetType = CIRCLE;
-/*»æÖÆÄ£Ê½±äÁ¿*/
+/*ç»˜åˆ¶æ¨¡å¼å˜é‡*/
 static Vector mousePositionToDraw;
 static Vector startPosition;
 static double density = 1.0;
 static bool isStatic = FALSE;
 static double restitution = 0.5;
 
-/*¿ØÖÆÄ£Ê½±äÁ¿*/
+/*æ§åˆ¶æ¨¡å¼å˜é‡*/
 /// <summary>
-/// Ä¿±êÒÆ¶¯ÎïÌå
+/// ç›®æ ‡ç§»åŠ¨ç‰©ä½“
 /// </summary>
 static Entity* targetEntity = NULL;
 /// <summary>
-/// ÊÇ·ñ±»Êó±ê×¥È¡
+/// æ˜¯å¦è¢«é¼ æ ‡æŠ“å–
 /// </summary>
 static bool isGrabed;
 /// <summary>
-/// Êó±êÏà¶ÔÄ¿±êÎïÌåÖĞĞÄµÄÆ«ÒÆÁ¿
+/// é¼ æ ‡ç›¸å¯¹ç›®æ ‡ç‰©ä½“ä¸­å¿ƒçš„åç§»é‡
 /// </summary>
 static Vector positionOffset;
 /// <summary>
-/// Êó±êÏà¶ÔÎïÌåÖĞĞÄµÄ½ÇÆ«ÒÆÁ¿
+/// é¼ æ ‡ç›¸å¯¹ç‰©ä½“ä¸­å¿ƒçš„è§’åç§»é‡
 /// </summary>
 static double angleOffset;
 
@@ -170,7 +170,7 @@ void Update(int TimeID)
 	{
 	case PhysicsTimer:
 		Step(0.01, 20);
-		//ÒÆ³ıyÖá¹ıµÍµÄ¸ÕÌå
+		//ç§»é™¤yè½´è¿‡ä½çš„åˆšä½“
 		for (i = 0; i < GetBodyCount(); i++)
 		{
 			AABB box = GetBodyAABB(GetBody(i));
@@ -183,7 +183,7 @@ void Update(int TimeID)
 		}
 		break;
 	case RendererTimer:
-		//ÇåÆÁ 
+		//æ¸…å± 
 		DisplayClear();
 		Render(entityList);
 		RenderOutline();
@@ -250,7 +250,7 @@ static double dy = 0.6;
 
 void ShowMessage()
 {
-	//ÏÔÊ¾¸ÕÌåÊıÁ¿
+	//æ˜¾ç¤ºåˆšä½“æ•°é‡
 	SetPenColor("Black");
 	MovePen(0.0, cy - 0.1);
 	DrawTextString("BodyCount : ");
@@ -260,7 +260,7 @@ void ShowMessage()
 	DrawTextString(count);
 
 	string text = NULL;
-	//ÏÔÊ¾Ä£Ê½
+	//æ˜¾ç¤ºæ¨¡å¼
 	SetPenColor("Black");
 	MovePen(0.0, cy - 0.3);
 	DrawTextString("Mode : ");
@@ -281,7 +281,7 @@ void ShowMessage()
 
 	if (mode == DrawMode)
 	{
-		//ÏÔÊ¾ĞÎ×´
+		//æ˜¾ç¤ºå½¢çŠ¶
 		SetPenColor("Black");
 		MovePen(0.0, cy - 0.5);
 		DrawTextString("Shape : ");
@@ -402,7 +402,7 @@ void SwitchMode(int key, int event)
 			else
 				isStatic = TRUE;
 		}
-		//Èç¹û¿ªÊ¼»æ»­£¬Ôò²»ÄÜÇĞ»»ĞÎ×´
+		//å¦‚æœå¼€å§‹ç»˜ç”»ï¼Œåˆ™ä¸èƒ½åˆ‡æ¢å½¢çŠ¶
 		if (drawStart)
 			return;
 		if(key == VK_SPACE && event == KEY_DOWN)
@@ -504,7 +504,7 @@ void DrawBox(Vector position, int button, int event)
 	case BUTTON_UP:
 		if (button == LEFT_BUTTON)
 		{
-			//¶Ô½ÇÏòÁ¿
+			//å¯¹è§’å‘é‡
 			Vector diag = Substract(position, startPosition);
 			double width = fabs(diag.x);
 			double height = fabs(diag.y);

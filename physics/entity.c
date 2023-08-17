@@ -71,7 +71,7 @@ void DrawEntity(Entity entity)
 		MovePen(body.position.x + body.radius, body.position.y);
 		DrawArc(body.radius, 0.0, 360.0);
 		EndFilledRegion();
-		//»­±ß¿ò
+		//Â»Â­Â±ÃŸÂ¿Ã²
 		SetPenColor(outlineColor);
 		MovePen(body.position.x + body.radius, body.position.y);
 		DrawArc(body.radius, 0.0, 360.0);
@@ -92,7 +92,7 @@ void DrawEntity(Entity entity)
 			DrawLine(edge.x, edge.y);
 		}
 		EndFilledRegion();
-		//»­±ß¿ò
+		//Â»Â­Â±ÃŸÂ¿Ã²
 		SetPenColor(outlineColor);
 		MovePen(vertices[0].x, vertices[0].y);
 		for (i = 0; i < 4; i++)

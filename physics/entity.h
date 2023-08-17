@@ -4,23 +4,23 @@
 #include "rigidbody.h"
 
 /// <summary>
-/// ÊµÌå£¬ÊÀ½çÖĞµÄÎïÌå
+/// å®ä½“ï¼Œä¸–ç•Œä¸­çš„ç‰©ä½“
 /// </summary>
 typedef struct entity
 {
 	Rigidbody* body;
 	/// <summary>
-	/// Ìî³äÑÕÉ«
+	/// å¡«å……é¢œè‰²
 	/// </summary>
 	string fillerColor;
 	/// <summary>
-	/// ÂÖÀªÑÕÉ«
+	/// è½®å»“é¢œè‰²
 	/// </summary>
 	string outlineColor;
 }Entity;
 
 /// <summary>
-/// ³õÊ¼»¯ÊµÌå
+/// åˆå§‹åŒ–å®ä½“
 /// </summary>
 Entity* InitEntity(Rigidbody* body, Vector position);
 
@@ -36,7 +36,7 @@ Entity* CreatePolygonEntity(Vector* vertices, int num, double density,
 void ChangeColor(Entity* entity, string fillerColor, string outlineColor);
 
 /// <summary>
-/// ÆúÓÃ
+/// å¼ƒç”¨
 /// </summary>
 void DrawEntity(Entity entity);
 #endif

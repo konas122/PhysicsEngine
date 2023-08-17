@@ -251,16 +251,16 @@ bool IntersectCirclePolygons(
 	int i;
 	for (i = 0; i < num; i++)
 	{
-		//»ñÈ¡¶à±ßĞÎÒ»±ß
+		//è·å–å¤šè¾¹å½¢ä¸€è¾¹
 		Vector edge = Substract(vertices[(i + 1) % num], vertices[i]);
-		//ÒÔÒ»±ßµÄ·¨ÏòÁ¿ÎªÖá
+		//ä»¥ä¸€è¾¹çš„æ³•å‘é‡ä¸ºè½´
 		axis = GetVector(-edge.y, edge.x);
 		axis = Normalize(axis);
 
 		ProjectVertices(vertices, num, axis, &minA, &maxA);
 		ProjectCircles(circleCenter, circleRadius, axis, &minB, &maxB);
 
-		//Èç¹ûÍ¶Ó°²»Ïà½»£¬Ôò¶à±ßĞÎ²»Ïà½»
+		//å¦‚æœæŠ•å½±ä¸ç›¸äº¤ï¼Œåˆ™å¤šè¾¹å½¢ä¸ç›¸äº¤
 		if (minA >= maxB || minB >= maxA)
 		{
 			return FALSE;
@@ -268,7 +268,7 @@ bool IntersectCirclePolygons(
 
 		axisDepth = Min(maxA - minB, maxB - minA);
 
-		//»ñÈ¡×îĞ¡Éî¶ÈÖµÒÔ¼°¶ÔÓ¦µÄ·¨ÏòÁ¿
+		//è·å–æœ€å°æ·±åº¦å€¼ä»¥åŠå¯¹åº”çš„æ³•å‘é‡
 		if (*depth > axisDepth)
 		{
 			*normal = axis;
@@ -284,7 +284,7 @@ bool IntersectCirclePolygons(
 	ProjectVertices(vertices, num, axis, &minA, &maxA);
 	ProjectCircles(circleCenter, circleRadius, axis, &minB, &maxB);
 
-	//Èç¹ûÍ¶Ó°²»Ïà½»£¬Ôò²»Ïà½»
+	//å¦‚æœæŠ•å½±ä¸ç›¸äº¤ï¼Œåˆ™ä¸ç›¸äº¤
 	if (minA >= maxB || minB >= maxA)
 	{
 		return FALSE;
@@ -292,14 +292,14 @@ bool IntersectCirclePolygons(
 
 	axisDepth = Min(maxA - minB, maxB - minA);
 
-	//»ñÈ¡×îĞ¡Éî¶ÈÖµÒÔ¼°¶ÔÓ¦µÄ·¨ÏòÁ¿
+	//è·å–æœ€å°æ·±åº¦å€¼ä»¥åŠå¯¹åº”çš„æ³•å‘é‡
 	if (*depth > axisDepth)
 	{
 		*normal = axis;
 		*depth = axisDepth;
 	}
 
-	//µ÷Õû·¨ÏòÁ¿·½Ïò
+	//è°ƒæ•´æ³•å‘é‡æ–¹å‘
 	Vector direction = Substract(polygonCenter, circleCenter);
 
 	if (DotProduct(direction, *normal) < 0.0)
@@ -334,7 +334,7 @@ void ProjectCircles(
 	Vector center, double radius, 
 	Vector axis, double* min, double* max)
 {
-	//°ë¾¶ÔÚÖá·½ÏòµÄÍ¶Ó°
+	//åŠå¾„åœ¨è½´æ–¹å‘çš„æŠ•å½±
 	Vector radiusProjection = ScalarProduct(Normalize(axis), radius);
 
 	Vector v1 = Add(center, radiusProjection);
@@ -362,9 +362,9 @@ bool IntersectPolygons(
 	int i;
 	for (i = 0; i < numA; i++)
 	{
-		//»ñÈ¡¶à±ßĞÎÒ»±ß
+		//è·å–å¤šè¾¹å½¢ä¸€è¾¹
 		Vector edge = Substract(verticesA[(i + 1) % numA], verticesA[i]);
-		//ÒÔÒ»±ßµÄ·¨ÏòÁ¿ÎªÖá
+		//ä»¥ä¸€è¾¹çš„æ³•å‘é‡ä¸ºè½´
 		Vector axis = GetVector(-edge.y, edge.x);
 		axis = Normalize(axis);
 
@@ -373,7 +373,7 @@ bool IntersectPolygons(
 		ProjectVertices(verticesA, numA, axis, &minA, &maxA);
 		ProjectVertices(verticesB, numB, axis, &minB, &maxB);
 
-		//Èç¹ûÍ¶Ó°²»Ïà½»£¬Ôò¶à±ßĞÎ²»Ïà½»
+		//å¦‚æœæŠ•å½±ä¸ç›¸äº¤ï¼Œåˆ™å¤šè¾¹å½¢ä¸ç›¸äº¤
 		if (minA >= maxB || minB >= maxA)
 		{
 			return FALSE;
@@ -381,7 +381,7 @@ bool IntersectPolygons(
 
 		double axisDepth = Min(maxA - minB, maxB - minA);
 
-		//»ñÈ¡×îĞ¡Éî¶ÈÖµÒÔ¼°¶ÔÓ¦µÄ·¨ÏòÁ¿
+		//è·å–æœ€å°æ·±åº¦å€¼ä»¥åŠå¯¹åº”çš„æ³•å‘é‡
 		if (*depth > axisDepth)
 		{
 			*normal = axis;
@@ -391,9 +391,9 @@ bool IntersectPolygons(
 
 	for (i = 0; i < numB; i++)
 	{
-		//»ñÈ¡¶à±ßĞÎÒ»±ß
+		//è·å–å¤šè¾¹å½¢ä¸€è¾¹
 		Vector edge = Substract(verticesB[(i + 1) % numB], verticesB[i]);
-		//ÒÔÒ»±ßµÄ·¨ÏòÁ¿ÎªÖá
+		//ä»¥ä¸€è¾¹çš„æ³•å‘é‡ä¸ºè½´
 		Vector axis = GetVector(-edge.y, edge.x);
 		axis = Normalize(axis);
 
@@ -402,7 +402,7 @@ bool IntersectPolygons(
 		ProjectVertices(verticesA, numA, axis, &minA, &maxA);
 		ProjectVertices(verticesB, numB, axis, &minB, &maxB);
 
-		//Èç¹ûÍ¶Ó°²»Ïà½»£¬Ôò¶à±ßĞÎ²»Ïà½»
+		//å¦‚æœæŠ•å½±ä¸ç›¸äº¤ï¼Œåˆ™å¤šè¾¹å½¢ä¸ç›¸äº¤
 		if (minA >= maxB || minB >= maxA)
 		{
 			return FALSE;
@@ -410,7 +410,7 @@ bool IntersectPolygons(
 
 		double axisDepth = Min(maxA - minB, maxB - minA);
 
-		//»ñÈ¡×îĞ¡Éî¶ÈÖµÒÔ¼°¶ÔÓ¦µÄ·¨ÏòÁ¿
+		//è·å–æœ€å°æ·±åº¦å€¼ä»¥åŠå¯¹åº”çš„æ³•å‘é‡
 		if (*depth > axisDepth)
 		{
 			*normal = axis;
@@ -418,7 +418,7 @@ bool IntersectPolygons(
 		}
 	}
 
-	//±£Ö¤·¨ÏòÁ¿·½ÏòÎªAÖ¸ÏòB
+	//ä¿è¯æ³•å‘é‡æ–¹å‘ä¸ºAæŒ‡å‘B
 	Vector direction = Substract(centerB, centerA);
 
 	if (DotProduct(direction, *normal) < 0.0)
@@ -461,14 +461,14 @@ bool IntersectCircles(
 	*depth = 0.0;
 	
 	double distance = Distance(centerA, centerB);
-	double radii = radiusA + radiusB; 	// °ë¾¶Ö®ºÍ
+	double radii = radiusA + radiusB; 	// åŠå¾„ä¹‹å’Œ
 	
 	if(distance >= radii)
 	{
 		return FALSE;
 	}
 	
-	*normal = Normalize(Substract(centerB, centerA));  //·¨ÏòÏòÁ¿ 
+	*normal = Normalize(Substract(centerB, centerA));  //æ³•å‘å‘é‡ 
 	*depth = radii - distance;
 	
 	return TRUE;

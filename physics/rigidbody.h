@@ -23,39 +23,39 @@ typedef struct rigidbody
 
 	ShapeType shapeType;
 	/// <summary>
-	/// Ãæ»ı
+	/// é¢ç§¯
 	/// </summary>
 	double area; 
 	/// <summary>
-	/// ÃÜ¶È 
+	/// å¯†åº¦ 
 	/// </summary>
 	double density;
 	/// <summary>
-	/// ÖÊÁ¿
+	/// è´¨é‡
 	/// </summary>
 	double mass;
 	/// <summary>
-	/// ÖÊÁ¿µÄµ¹Êı£¬·½±ã¼ÆËã
+	/// è´¨é‡çš„å€’æ•°ï¼Œæ–¹ä¾¿è®¡ç®—
 	/// </summary>
 	double invMass;
 	/// <summary>
-	/// ×ª¶¯¹ßÁ¿
+	/// è½¬åŠ¨æƒ¯é‡
 	/// </summary>
 	double inertia;
 	/// <summary>
-	/// ×ª¶¯¹ßÁ¿µÄµ¹Êı
+	/// è½¬åŠ¨æƒ¯é‡çš„å€’æ•°
 	/// </summary>
 	double invInertia;
 	/// <summary>
-	/// ¾¢¶ÈÏµÊı
+	/// åŠ²åº¦ç³»æ•°
 	/// </summary>
 	double restitution;
 	/// <summary>
-	/// ÊÇ·ñÊÇ¾²Ì¬
+	/// æ˜¯å¦æ˜¯é™æ€
 	/// </summary>
 	bool isStatic;
 	/// <summary>
-	/// ÊÇ·ñÊÇÔË¶¯Ñ§µÄ£¨²»ÊÜÖØÁ¦Ó°Ïì£©
+	/// æ˜¯å¦æ˜¯è¿åŠ¨å­¦çš„ï¼ˆä¸å—é‡åŠ›å½±å“ï¼‰
 	/// </summary>
 	bool isKinematic;
 	double radius;
@@ -65,15 +65,15 @@ typedef struct rigidbody
 	double dynamicFriction;
 	
 	/// <summary>
-	/// ¶¥µãÊı
+	/// é¡¶ç‚¹æ•°
 	/// </summary>
 	int vertexNumber;
 	/// <summary>
-	/// ¶¥µã£¬Í¨³£²»¿ÉÓÃ
+	/// é¡¶ç‚¹ï¼Œé€šå¸¸ä¸å¯ç”¨
 	/// </summary>
 	Vector* vertices;
 	/// <summary>
-	/// ´¢´æ±ä»»ºóµÄ¶¥µã
+	/// å‚¨å­˜å˜æ¢åçš„é¡¶ç‚¹
 	/// </summary>
 	Vector* transformedVertices;
 	AABB aabb;
@@ -83,7 +83,7 @@ typedef struct rigidbody
 }Rigidbody;
 
 /// <summary>
-/// ³õÊ¼»¯¸ÕÌå
+/// åˆå§‹åŒ–åˆšä½“
 /// </summary>
 Rigidbody* InitBody(
 	ShapeType shapeType, double area, double density, double mass,
@@ -91,18 +91,18 @@ Rigidbody* InitBody(
 	double width, double height, int vertexNumber, Vector* vertices);
 
 /// <summary>
-/// ³õÊ¼»¯Ô²ĞÎ¸ÕÌå
+/// åˆå§‹åŒ–åœ†å½¢åˆšä½“
 /// </summary>
 Rigidbody* CreateCircleBody(double radius, double density,
 	bool isStatic, double restitution);
 
 /// <summary>
-/// ³õÊ¼»¯¾ØĞÎ¸ÕÌå
+/// åˆå§‹åŒ–çŸ©å½¢åˆšä½“
 /// </summary>
 Rigidbody* CreateBoxBody(double width, double height, double density,
 	bool isStatic, double restitution);
 /// <summary>
-/// ´´½¨¾ØĞÎ¶¥µã
+/// åˆ›å»ºçŸ©å½¢é¡¶ç‚¹
 /// </summary>
 Vector* CreateBoxVertices(double width, double height);
 
@@ -113,12 +113,12 @@ double CalculatePolygonArea(Vector* vertices, int num);
 double CalculatePolygonInertia(Vector* vertices, int num, double mass);
 
 /// <summary>
-/// »ñµÃ±ä»»ºóµÄ¶¥µã
+/// è·å¾—å˜æ¢åçš„é¡¶ç‚¹
 /// </summary>
 Vector* GetTransformedVertices(Rigidbody* body);
 int* CreateBoxTriangles();
 
-/*¸ÕÌåÔË¶¯*/
+/*åˆšä½“è¿åŠ¨*/
 void MoveBody(Rigidbody *body, Vector amount);
 void MoveBodyTo(Rigidbody* body, Vector position);
 void RotateBody(Rigidbody* body, double amount);
@@ -129,12 +129,12 @@ void AddForce(Rigidbody* body, Vector amount);
 AABB GetBodyAABB(Rigidbody* body);
 
 /// <summary>
-/// ¸ÕÌåÔË¶¯¸üĞÂ
+/// åˆšä½“è¿åŠ¨æ›´æ–°
 /// </summary>
 void RigidBodyStep(Rigidbody* body, double time, Vector gravity, int iterations);
 
 /// <summary>
-/// Ê¹¸ÕÌåÇ÷ÓÚÎÈ¶¨£¬Ã²ËÆÃ»¶à´óÓÃ
+/// ä½¿åˆšä½“è¶‹äºç¨³å®šï¼Œè²Œä¼¼æ²¡å¤šå¤§ç”¨
 /// </summary>
 void Stabilizer(Rigidbody* body);
 

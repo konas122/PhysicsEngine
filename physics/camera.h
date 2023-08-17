@@ -6,56 +6,56 @@
 #include "list.h"
 
 /// <summary>
-/// Ïà»ú£¬ÓÃÓÚÊÓ½Ç¿ØÖÆ¼°äÖÈ¾
+/// ç›¸æœºï¼Œç”¨äºè§†è§’æ§åˆ¶åŠæ¸²æŸ“
 /// </summary>
 typedef struct camera
 {
 	Vector position;
 	double scale;
 	/// <summary>
-	/// ÆÁÄ»Ô­µã
+	/// å±å¹•åŸç‚¹
 	/// </summary>
 	Vector screenOrigin;
 }Camera;
 
 /// <summary>
-/// ³õÊ¼»¯Ïà»ú
+/// åˆå§‹åŒ–ç›¸æœº
 /// </summary>
 void InitCamera();
 
 /// <summary>
-/// »ñÈ¡ÆÁÄ»Ô­µã
+/// è·å–å±å¹•åŸç‚¹
 /// </summary>
 /// <returns></returns>
 Vector GetScreenOrigin();
 /// <summary>
-/// »ñÈ¡ÊÀ½ç×ø±ê
+/// è·å–ä¸–ç•Œåæ ‡
 /// </summary>
 Vector GetWorldPosition(Vector screenPosition);
 /// <summary>
-/// »ñÈ¡ÆÁÄ»×ø±ê
+/// è·å–å±å¹•åæ ‡
 /// </summary>
 Vector GetScreenPosition(Vector worldPosition);
 
 /// <summary>
-/// Ïà»úËõ·Å
+/// ç›¸æœºç¼©æ”¾
 /// </summary>
 void CameraScale(int event);
 /// <summary>
-/// Ïà»úÒÆ¶¯¿ØÖÆ
+/// ç›¸æœºç§»åŠ¨æ§åˆ¶
 /// </summary>
 void CameraControl(int key, int event);
 
 /// <summary>
-/// ÕÚµ²ÌŞ³ı£¬ÅÅ³ıÏà»úÍâµÄÎïÌå
+/// é®æŒ¡å‰”é™¤ï¼Œæ’é™¤ç›¸æœºå¤–çš„ç‰©ä½“
 /// </summary>
 void OcclusionCulling(List* entityList);
 /// <summary>
-/// äÖÈ¾
+/// æ¸²æŸ“
 /// </summary>
 void Render(List* entityList);
 /// <summary>
-/// »ñÈ¡ÓÃÓÚ»æÖÆµÄ¸ÕÌå
+/// è·å–ç”¨äºç»˜åˆ¶çš„åˆšä½“
 /// </summary>
 void ScaleBody(Rigidbody* body);
 

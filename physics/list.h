@@ -10,7 +10,7 @@ typedef struct node
 }Node;
 
 /// <summary>
-/// Ö§³ÖÈÎÒâÀàĞÍÊı¾İµÄÁ´±í£¬Êı¾İ±ØĞëÊÇÖ¸Õë
+/// æ”¯æŒä»»æ„ç±»å‹æ•°æ®çš„é“¾è¡¨ï¼Œæ•°æ®å¿…é¡»æ˜¯æŒ‡é’ˆ
 /// </summary>
 typedef struct list
 {
@@ -21,29 +21,29 @@ typedef struct list
 }List;
 
 /// <summary>
-/// ĞÂ½¨¿ÕÁ´±í
+/// æ–°å»ºç©ºé“¾è¡¨
 /// </summary>
-/// <param name="dataSize">´¢´æÊı¾İµÄ´óĞ¡</param>
+/// <param name="dataSize">å‚¨å­˜æ•°æ®çš„å¤§å°</param>
 /// <returns></returns>
 List* CreateList(int dataSize);
 
-/*Ìí¼ÓÊı¾İ*/
+/*æ·»åŠ æ•°æ®*/
 /// <summary>
-/// Í·²åÁ´±í
+/// å¤´æ’é“¾è¡¨
 /// </summary>
 void InsertFromHead(List* list, void* data);
 /// <summary>
-/// Î²²åÁ´±í
+/// å°¾æ’é“¾è¡¨
 /// </summary>
 void InsertFromTail(List* list, void* data);
 void InsertByIndex(List* list, void* data, int index);
 
-/*ÒÆ³ıÊı¾İ*/
+/*ç§»é™¤æ•°æ®*/
 bool RemoveFromHead(List* list);
 bool RemoveFromTail(List* list);
 bool RemoveByIndex(List* list, int index);
 /// <summary>
-/// Çå¿ÕÁ´±í
+/// æ¸…ç©ºé“¾è¡¨
 /// </summary>
 void ClearList(List* list);
 

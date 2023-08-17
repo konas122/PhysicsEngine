@@ -20,7 +20,7 @@ Rigidbody* InitBody(
 	{
 		return NULL;
 	}
-	//限制偿还系数 
+	//闄愬埗鍋胯繕绯绘暟 
 	if (restitution < 0.0)
 	{
 		restitution = 0.0;
@@ -190,7 +190,7 @@ double CalculatePolygonArea(Vector* vertices, int num)
 
 double CalculatePolygonInertia(Vector* vertices, int num, double mass)
 {
-	//I = m / 6 (Σ |Pn+1 × Pn|(Pn+1 ^2 + Pn+1 * Pn + Pn^2))/ (Σ|Pn+1 × Pn|)
+	//I = m / 6 (危 |Pn+1 脳 Pn|(Pn+1 ^2 + Pn+1 * Pn + Pn^2))/ (危|Pn+1 脳 Pn|)
 	double numer = 0.0;
 	double denom = 0.0;
 	int i;

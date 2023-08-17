@@ -39,11 +39,11 @@ static int maxIteration = 64;
 
 static Vector gravity;
 /// <summary>
-/// ÊÀ½ç¸ÕÌåÁĞ±í
+/// ä¸–ç•Œåˆšä½“åˆ—è¡¨
 /// </summary>
 static List* bodyList;
 /// <summary>
-/// ±£´æ´ı¼ÆËãÅö×²µÄ¸ÕÌåµÄĞòºÅ
+/// ä¿å­˜å¾…è®¡ç®—ç¢°æ’çš„åˆšä½“çš„åºå·
 /// </summary>
 static List* contactPairs;
 
@@ -89,7 +89,7 @@ void Step(double time, unsigned int iterations)
 	int currentIteration;
 	for (currentIteration = 0; currentIteration < iterations; currentIteration++)
 	{
-		//Çå³ıÉÏÒ»´ÎµÄÅö×²ĞÅÏ¢
+		//æ¸…é™¤ä¸Šä¸€æ¬¡çš„ç¢°æ’ä¿¡æ¯
 		ClearList(contactPairs);
 
 		StepBodies(time, iterations);
@@ -163,7 +163,7 @@ void StepBodies(double time, int iterations)
 }
 
 /// <summary>
-/// ·ÖÀëÁ½¸ö¸ÕÌå
+/// åˆ†ç¦»ä¸¤ä¸ªåˆšä½“
 /// </summary>
 /// <param name="mtv">: minimum translation vector</param>
 void SeparateBodies(Rigidbody* bodyA, Rigidbody* bodyB, Vector mtv)
@@ -215,7 +215,7 @@ void ResolveCollisionWithFriction(Manifold contact)
 		jList[i] = 0.0;
 	}
 
-	//³å»÷Á¦¼ÆËã
+	//å†²å‡»åŠ›è®¡ç®—
 	for (i = 0; i < contactCount; i++)
 	{
 		Vector ra = Substract(contactList[i], bodyA->position);
@@ -241,7 +241,7 @@ void ResolveCollisionWithFriction(Manifold contact)
 		}
 		//VA2 = VA1 - j / massA * n  j is the magnitude of the impluse
 		//VB2 = VB1 + j / massB * n
-		//j = [-(1 + e)vAB1 * n] / [n * n(1/massA + 1/massB) + (rAP¡Í * n)^2 / IA + (rBP¡Í * n) / IB]  e is the restitution
+		//j = [-(1 + e)vAB1 * n] / [n * n(1/massA + 1/massB) + (rAPâŠ¥ * n)^2 / IA + (rBPâŠ¥ * n) / IB]  e is the restitution
 		double raPerpDotN = DotProduct(raPerp, normal);
 		double rbPerpDotN = DotProduct(rbPerp, normal);
 
@@ -270,7 +270,7 @@ void ResolveCollisionWithFriction(Manifold contact)
 		bodyB->angularVelocity += CrossProduct(rb, impulse) * bodyB->invInertia;
 	}
 
-	//Ä¦²ÁÁ¦¼ÆËã
+	//æ‘©æ“¦åŠ›è®¡ç®—
 	for (i = 0; i < contactCount; i++)
 	{
 		Vector ra = Substract(contactList[i], bodyA->position);
@@ -288,11 +288,11 @@ void ResolveCollisionWithFriction(Manifold contact)
 			Add(bodyB->linearVelocity, angularLinearVelocityB),
 			Add(bodyA->linearVelocity, angularLinearVelocityA));
 
-		//ÇĞÏßÏòÁ¿
+		//åˆ‡çº¿å‘é‡
 		Vector tangent = Substract(relativeVelocity, 
 			ScalarProduct(normal, DotProduct(relativeVelocity, normal)));
 
-		//Èç¹ûÇĞÏßÏòÁ¿ÎªÁã£¬ËµÃ÷Ã»ÓĞÅö×²
+		//å¦‚æœåˆ‡çº¿å‘é‡ä¸ºé›¶ï¼Œè¯´æ˜æ²¡æœ‰ç¢°æ’
 		if(IsVectorsNearlyEqual(tangent, GetZero()))
 		{
 			continue;
@@ -311,7 +311,7 @@ void ResolveCollisionWithFriction(Manifold contact)
 		double jt = -DotProduct(relativeVelocity, tangent);
 		jt /= denom * contactCount;
 		
-		//Ff <= ¦Ì * Fn  ==> jt <= j * sf  sf : staticFriction
+		//Ff <= Î¼ * Fn  ==> jt <= j * sf  sf : staticFriction
 		Vector frictionImpulse;
 		double j = jList[i];
 		if(fabs(jt) <= j * sf)

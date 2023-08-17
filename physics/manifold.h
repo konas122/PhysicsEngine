@@ -4,7 +4,7 @@
 #include "rigidbody.h"
 
 /// <summary>
-/// ´¢´æÅö×²¼¯
+/// Â´Â¢Â´Ã¦Ã…Ã¶Ã—Â²Â¼Â¯
 /// </summary>
 typedef struct manifold
 {

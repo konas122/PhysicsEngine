@@ -5,14 +5,14 @@
 #include "rigidbody.h"
 
 /// <summary>
-/// »ñµÃ¶¥µã¶ÔÒ»±ßµÄ¾àÀë
+/// è·å¾—é¡¶ç‚¹å¯¹ä¸€è¾¹çš„è·ç¦»
 /// </summary>
 void PointSegmentDistance(
 	Vector p, Vector a, Vector b, 
 	double* distanceSquared, Vector* contact);
 
 /// <summary>
-/// ¼ì²âÖá¶ÔÆëÅö×²ÏäµÄÅö×²
+/// æ£€æµ‹è½´å¯¹é½ç¢°æ’ç®±çš„ç¢°æ’
 /// </summary>
 bool IntersectAABBs(AABB a, AABB b);
 
@@ -29,14 +29,14 @@ void FindCirclePolygonContactPoint(
 	Vector* vertices, int num, Vector* cp);
 
 /// <summary>
-/// »ñµÃÁ½¸öÔ²ĞÎ¸ÕÌåµÄ½Ó´¥µã
+/// è·å¾—ä¸¤ä¸ªåœ†å½¢åˆšä½“çš„æ¥è§¦ç‚¹
 /// </summary>
 void FindCirclesContactPoint(
 	Vector centerA, double radiusA, 
 	Vector centerB, Vector* cp);
 
 /// <summary>
-/// Åö×²¼ì²â
+/// ç¢°æ’æ£€æµ‹
 /// </summary>
 bool Collide(
 	Rigidbody* bodyA, Rigidbody* bodyB, 
@@ -48,11 +48,11 @@ bool IntersectCirclePolygons(
 	Vector* normal, double* depth);
 
 /// <summary>
-/// ÕÒµ½ÀëÔ²ĞÄ×î½üµÄ¶¥µã
+/// æ‰¾åˆ°ç¦»åœ†å¿ƒæœ€è¿‘çš„é¡¶ç‚¹
 /// </summary>
 int FindClosestPointPolygon(Vector circleCenter, Vector* vertices, int num);
 /// <summary>
-/// »ñÈ¡Ô²ÔÚ¶ÔÓ¦ÖáÉÏµÄÍ¶Ó°
+/// è·å–åœ†åœ¨å¯¹åº”è½´ä¸Šçš„æŠ•å½±
 /// </summary>
 void ProjectCircles(
 	Vector center, double radius, 
@@ -64,7 +64,7 @@ bool IntersectPolygons(
 	Vector* normal, double* depth);
 
 /// <summary>
-/// »ñÈ¡¶à±ßĞÎ¶¥µãÔÚ¶ÔÓ¦ÖáÉÏµÄ×î´ó¡¢×îĞ¡Í¶Ó°£¨¶ÔÖáµÄµã³Ë£©
+/// è·å–å¤šè¾¹å½¢é¡¶ç‚¹åœ¨å¯¹åº”è½´ä¸Šçš„æœ€å¤§ã€æœ€å°æŠ•å½±ï¼ˆå¯¹è½´çš„ç‚¹ä¹˜ï¼‰
 /// </summary>
 void ProjectVertices(
 	Vector* vertices, int num, 

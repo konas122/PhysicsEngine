@@ -12,15 +12,15 @@ typedef struct transform
 }Transform;
 
 /// <summary>
-/// ´´½¨±ä»»
+/// åˆ›å»ºå˜æ¢
 /// </summary>
 Transform GetTransform(double x, double y, double angle);
 /// <summary>
-/// Í¨¹ıÏòÁ¿´´½¨±ä»»
+/// é€šè¿‡å‘é‡åˆ›å»ºå˜æ¢
 /// </summary>
 Transform GetTransformByVector(Vector position, double angle);
 /// <summary>
-/// »ñµÃÁã±ä»»
+/// è·å¾—é›¶å˜æ¢
 /// </summary>
 Transform GetZeroTransform();
 

@@ -17,21 +17,21 @@ Rigidbody* GetBody(int index);
 int GetBodyCount();
 
 /// <summary>
-/// 世界物理更新
+/// 涓栫晫鐗╃悊鏇存柊
 /// </summary>
-/// <param name="time">每帧时间</param>
-/// <param name="iterations">迭代次数，越大越精确</param>
+/// <param name="time">姣忓抚鏃堕棿</param>
+/// <param name="iterations">杩唬娆℃暟锛岃秺澶ц秺绮剧‘</param>
 void Step(double time, unsigned int iterations);
 void BroadPhase();
 void NarrowPhase();
 void StepBodies(double time, int iterations);
 /// <summary>
-/// 分离两个刚体
+/// 鍒嗙涓や釜鍒氫綋
 /// </summary>
 /// <param name="mtv">: minimum translation vector</param>
 void SeparateBodies(Rigidbody* bodyA, Rigidbody* bodyB, Vector mtv);
 /// <summary>
-/// 计算碰撞
+/// 璁＄畻纰版挒
 /// </summary>
 void ResolveCollisionWithFriction(Manifold contact);
 

@@ -4,7 +4,6 @@
 #include "vector.h"
 
 /// <summary>
-/// Öá¶ÔÆëÅö×²Ïä
 /// </summary>
 typedef struct AABB
 {

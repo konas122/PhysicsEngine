@@ -7,7 +7,7 @@
 #include "camera.h"
 
 /// <summary>
-/// Ïà»ú£¬½öÄÜ´æÔÚÒ»¸ö
+/// ç›¸æœºï¼Œä»…èƒ½å­˜åœ¨ä¸€ä¸ª
 /// </summary>
 static Camera camera;
 static double scaleSpeed = 0.1;
@@ -16,7 +16,7 @@ static double maxScale = 5.0;
 static double minScale = 0.1;
 
 /// <summary>
-/// ĞèÒªäÖÈ¾µÄÊµÌå±àºÅ
+/// éœ€è¦æ¸²æŸ“çš„å®ä½“ç¼–å·
 /// </summary>
 static List* renderList;
 
@@ -114,7 +114,7 @@ void OcclusionCulling(List* entityList)
 }
 
 /// <summary>
-/// äÖÈ¾ÊµÌå
+/// æ¸²æŸ“å®ä½“
 /// </summary>
 void Render(List* entityList)
 {
@@ -129,7 +129,7 @@ void Render(List* entityList)
 		Vector* vertices = NULL;
 		int num = bodyToDraw.vertexNumber;
 
-		//Ìî³äÄÚ²¿
+		//å¡«å……å†…éƒ¨
 		StartFilledRegion(1);
 		SetPenColor(entity.fillerColor);
 		if (bodyToDraw.shapeType == CIRCLE)
@@ -151,13 +151,13 @@ void Render(List* entityList)
 		}
 		EndFilledRegion();
 
-		//»æÖÆ±ß¿ò
+		//ç»˜åˆ¶è¾¹æ¡†
 		SetPenColor(entity.outlineColor);
 		if (bodyToDraw.shapeType == CIRCLE)
 		{
 			MovePen(bodyToDraw.position.x + bodyToDraw.radius, bodyToDraw.position.y);
 			DrawArc(bodyToDraw.radius, 0.0, 360.0);
-			//»æÖÆ°ë¾¶Ïß
+			//ç»˜åˆ¶åŠå¾„çº¿
 			SetPenColor("White");
 			MovePenByVector(bodyToDraw.position);
 			DrawLine(-bodyToDraw.radius * cos(bodyToDraw.angle), -bodyToDraw.radius * sin(bodyToDraw.angle));
